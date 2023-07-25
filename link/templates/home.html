@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Ma'lumotlari</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Video Ma'lumotlari</h1>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="videoLink">Video havolasini kiriting:</label>
+                        <input type="text" name="video_link" class="form-control" id="videoLink" placeholder="https://www.youtube.com/watch?v=">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ma'lumotlarni olish</button>
+                </form>
+                <br>
+                {% if text %}
+                <a href="{% url 'download_file' %}">
+                    <button class="btn" style="width: 100%">
+                        <i class="fa fa-download"></i> Download
+                    </button>
+                </a>
+                {% endif %}
+            
+            </div>
+        </div>
+        <br>
+
+        
+          
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
